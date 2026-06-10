@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Detector</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <main class="site-main">
+      <div class="title">
+        Phishing and LLM Detector
+      </div>
+
+      <div alt="URL Input Box" class="input-box-container">
+        <input class="url-input-box"type="text" placeholder="Enter URL" />
+      </div>
+
+      <div alt="Email Input Box" class="input-box-container">
+        <input class="email-input-box" type="text" placeholder="Enter Email" />
+      </div>
+
+      <div class="button-container">
+        <button onclick="checkDeterministically()">Check Deterministically</button>
+        <button onclick="checkWithAI()">Check with AI</button>
+      </div>
+
+      <div id="results-container" class="results-container">
+        <p id="phishing-result" class="result-text"></p>
+        <p id="llm-result" class="result-text"></p>
+      </div>
+
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

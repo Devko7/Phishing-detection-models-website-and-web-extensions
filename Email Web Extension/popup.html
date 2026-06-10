@@ -1,0 +1,157 @@
+<!-- Main writer: David Vasilev -->
+<!-- Reviewer: Sidra Al Khawam -->
+<!-- Contributor: Estelle Namekong -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Phishing and LLM Detector</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    :root {
+      --bg:       #000000;
+      --surface:  #101010;
+      --border:   #2c2c2c;
+      --text:     #ffffff;
+      --muted:    #ffffff;
+      --red:      #e94560;
+      --orange:   #f5a623;
+      --green:    #2ecc71;
+      --accent:   #666967;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 280px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+      width: 65%;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--accent);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-label {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .score {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--accent-color, var(--text));
+      transition: color 0.4s ease;
+      letter-spacing: -2px;
+    }
+
+    .score-unit {
+      font-size: 20px;
+      vertical-align: super;
+      letter-spacing: 0;
+    }
+
+    .bar-track {
+      margin-top: 14px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--accent-color, var(--accent));
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s ease;
+    }
+
+    .verdict {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-color, var(--muted));
+      margin-top: 10px;
+      transition: color 0.4s ease;
+    }
+
+    .status {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      padding: 4px 0 2px;
+      letter-spacing: 0.04em;
+    }
+
+    .timestamp {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+    .loading .score { animation: pulse 1.2s ease infinite; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Email Phishing & LLM Detector</h1>
+  </header>
+
+  <div class="card" id="phishing-card">
+    <div class="card-label">Phishing Probability</div>
+    <div class="score" id="phishing-score">—</div>
+    <div class="bar-track"><div class="bar-fill" id="phishing-bar"></div></div>
+    <div class="verdict" id="phishing-verdict">No data yet</div>
+  </div>
+
+  <div class="card" id="llm-card">
+    <div class="card-label">LLM Generation Probability</div>
+    <div class="score" id="llm-score">—</div>
+    <div class="bar-track"><div class="bar-fill" id="llm-bar"></div></div>
+    <div class="verdict" id="llm-verdict">No data yet</div>
+  </div>
+
+  <div class="status" id="status">Open an email in Gmail to analyse it.</div>
+  <div class="timestamp" id="timestamp"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

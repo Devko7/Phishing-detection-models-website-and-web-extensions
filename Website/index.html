@@ -1,0 +1,79 @@
+<!-- Main writer: David Vasilev -->
+<!-- Reviewer: Olivier van Leeuwen -->
+<!-- Contributor: Sidra Al Khawam, Estelle Namekong, Jon Zdovc-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Detector</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <main class="site-main">
+      <div class="title">
+        AI vs. Deterministic <br> Phishing Detector
+      </div>
+
+      <div class="content-wrapper">
+        <div class="main-container">
+          <div class="sub-title">
+            URL
+          </div>
+          
+          <div alt="URL Input Box" class="input-box-container">
+            <textarea id="url-input" class="url-input-box" placeholder="Enter URL"></textarea>
+          </div>
+
+          <div class="sub-title">
+            Email
+          </div>
+
+          <div alt="Email Input Box" class="input-box-container">
+            <textarea id="email-subject-input" alt="Email Subject Input Box" class="email-input-box" placeholder="Enter Email Subject" style="height: 70px;"></textarea>
+            <textarea id="email-body-input" alt="Email Body Input Box" class="email-input-box" placeholder="Enter Email Body"></textarea>
+          </div>
+
+          <div class="button-container">
+            <button class="button" type="button" onclick="checkWithAI()">
+              <img src="assets/bot.svg" alt="" class="button-icon" />
+              Check with AI
+            </button>
+
+            <button class="button" type="button" onclick="checkDeterministically()">
+              <img src="assets/code-xml.svg" alt="" class="button-icon" />
+              Check Deterministically
+            </button>
+          </div>
+        </div>
+
+        <div alt="Results Container" class="results-container">
+          <div class="sub-title" style="margin-left: 0;">
+            Results
+          </div>
+
+          <div id="results-container">
+            <p id="phishing-result-title" class="result-title">Phishing</p>
+            <p id="phishing-result" class="result-text"></p>
+            <div class="progress-track">
+              <div id="phishing-bar" class="progress-fill"></div>
+            </div>
+
+            <p id="llm-result-title" class="result-title" style="margin-top: 80px;">LLM Generated</p>
+            <p id="llm-result" class="result-text"></p>
+            <div class="progress-track">
+              <div id="llm-bar" class="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="warning-container" class="warning-container">
+        <p id="warning-text" class="warning-text"></p>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

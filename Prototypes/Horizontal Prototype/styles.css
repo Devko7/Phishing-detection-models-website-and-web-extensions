@@ -1,0 +1,86 @@
+html {
+  background: linear-gradient(135deg, #0f2a1d, #1e3b2b, #03a14a);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.site-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.input-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+
+.url-input-box {
+  width: 500px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 3px solid #00ffa6;
+}
+
+.email-input-box {
+  width: 500px;
+  height: 140px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 3px solid #00ffa6;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.result-text {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+
+.results-container {
+  margin-top: 20px;
+}
+
+.results-container.show {
+  display: block;
+}
+
+button {
+  background-color: #05905b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #03f095;
+}
