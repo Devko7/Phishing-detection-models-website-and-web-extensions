@@ -58,7 +58,7 @@ After you have uploaded the `Email Web Extension` package to your extensions, op
 After you have uploaded the `URL Web Extension` package to your extensions, open any site you want in your browser. If the calls to the API determine the URL you are trying to visit is phishing, defacement, or malware a "Connection Blocked" screen will appear on the page.
 
 # Training Models
-Email dataset is found [here](https://www.kaggle.com/datasets/francescogreco97/human-llm-generated-phishing-legitimate-emails?resource=download), URL dataset is found [here](https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset)
+Email dataset is found [here](https://www.kaggle.com/datasets/francescogreco97/human-llm-generated-phishing-legitimate-emails?resource=download), URL dataset is found [here](https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset).
 Before using the models for predicitons on the website the models have to be trained. Use the following command inside root to train the models:
 ```bash
 python <path to model>
