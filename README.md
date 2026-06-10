@@ -58,6 +58,7 @@ After you have uploaded the `Email Web Extension` package to your extensions, op
 After you have uploaded the `URL Web Extension` package to your extensions, open any site you want in your browser. If the calls to the API determine the URL you are trying to visit is phishing, defacement, or malware a "Connection Blocked" screen will appear on the page.
 
 # Training Models
+Email dataset is found [here](https://www.kaggle.com/datasets/francescogreco97/human-llm-generated-phishing-legitimate-emails?resource=download), URL dataset is found [here](https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset)
 Before using the models for predicitons on the website the models have to be trained. Use the following command inside root to train the models:
 ```bash
 python <path to model>
@@ -84,31 +85,4 @@ python <path to script>
 **Example:**
 ```bash
 python "Experiments/email_experiments_script.py"
-```
-
----
-
-# Prototypes
-This section explains the prototypes delivered in Phase 1. Both vertical and horizontal prototypes are located in the `Prototypes` package.
-
-### Horizontal Prototype: Website
-In the `Prototypes/Horizontal Prototype` package, open the `index.html` file in a browser and you will see the prototype.
-
-### Vertical Prototype: Phishing Email Decision Tree Classifier
-The Vertical Prototype is a very simple Decision Tree Classifier model trained on only the phishing and legit emails in the dataset. It uses a classification pipeline that first converts the text of the email to TF-IDF features and then trains a Decision Tree on those features.
-
-**How to run:**
-In the `Prototypes/Vertical Prototype` package, if you don't have the required libraries installed you can run:
-```bash
-pip install -r requirements.txt
-```
-
-Then to run a prediction, the command for the model follows this structure:
-```bash
-python "Prototypes/Vertical Prototype/decision_tree_email_classifier.py" --subject <subject text> --body <body text>
-```
-
-**Example:**
-```bash
-python "Prototypes/Vertical Prototype/decision_tree_email_classifier.py" --subject "Your account will be suspended" --body "Click here to verify your account or it will be closed."
 ```
